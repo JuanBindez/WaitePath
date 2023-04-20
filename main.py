@@ -24,6 +24,7 @@
 import os
 import base64
 import io
+import random
 
 from tkinter import *
 from tkinter import ttk
@@ -51,9 +52,21 @@ background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 
 
+random_cards = random.randint(1, 10)
 
-
-
+match random_cards:
+    case 1:
+        print("1")
+        
+    case 2:
+        print("2")
+        
+    case 3:
+        print("3")
+        
+    case _:
+        print("não é nenhum")
+        
 
 if __name__ == "__main__":
     window.mainloop()
