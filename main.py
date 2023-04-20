@@ -1,6 +1,6 @@
 # this is part of the WaitePath project.
 #
-# Release: v1.0-dev1
+# Release: v1.0-dev2
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -36,7 +36,7 @@ image_base64 = 'iVBORw0KGgoAAAANSUhEUgAABQMAAALQCAYAAAAkSmZVAAAABHNCSVQICAgIfAhk
 
 
 window = Tk()
-window.title("WaitePath v1.0-dev")
+window.title("WaitePath")
 window.geometry("1200x650")
 window.resizable(True, True)# False for non-responsive window and True for responsive.
 window.attributes('-alpha',9.1)
@@ -51,21 +51,56 @@ background_label = Label(window, image=img)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 
+class CardShowScreem():
+    def __init__(self, casa1, casa2, casa3, casa4, casa5):
+        self.casa1 = casa1  
+        self.casa2 = casa2
+        self.casa3 = casa3
+        self.casa4 = casa4
+        self.casa5 = casa5
 
-random_cards = random.randint(1, 10)
+    def casa1_positivo(self):
+        print(self.casa1)
+    
+    def casa2_negativo(self):
+        print(self.casa2)
 
-match random_cards:
-    case 1:
-        print("1")
-        
-    case 2:
-        print("2")
-        
-    case 3:
-        print("3")
-        
-    case _:
-        print("não é nenhum")
+    def casa3_caminho(self):
+        print(self.casa3)
+
+    def casa4_resultado(self):
+        print(self.casa4)
+
+    def casa5_consulente(self):
+        print(self.casa5)
+
+
+numeros_sorteados = []
+
+
+while len(numeros_sorteados) < 5:
+    numero = random.randint(1, 78)
+    if numero not in numeros_sorteados:
+        numeros_sorteados.append(numero)
+
+        if len(numeros_sorteados) == 1:
+            card_1 = numero
+        elif len(numeros_sorteados) == 2:
+            card_2 = numero
+        elif len(numeros_sorteados) == 3:
+            card_3 = numero
+        elif len(numeros_sorteados) == 4:
+            card_4 = numero
+        else:
+            card_5 = numero
+
+
+css = CardShowScreem(card_1, card_2, card_3, card_4, card_5)
+css.casa1_positivo()
+css.casa2_negativo()
+css.casa3_caminho()
+css.casa4_resultado()
+css.casa5_consulente()
         
 
 if __name__ == "__main__":
