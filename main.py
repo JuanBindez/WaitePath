@@ -1,6 +1,6 @@
 # this is part of the WaitePath project.
 #
-# Release: v1.0-dev
+# Release: v1.0-dev1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
