@@ -1,6 +1,6 @@
 # this is part of the WaitePath project.
 #
-# Release: v1.0-dev2
+# Release: v1.0-dev3
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -75,33 +75,43 @@ class CardShowScreem():
         print(self.casa5)
 
 
-numeros_sorteados = []
+def start_game():
+
+    numeros_sorteados = []
+
+    while len(numeros_sorteados) < 5:
+        numero = random.randint(1, 78)
+        if numero not in numeros_sorteados:
+            numeros_sorteados.append(numero)
+
+            if len(numeros_sorteados) == 1:
+                card_1 = numero
+            elif len(numeros_sorteados) == 2:
+                card_2 = numero
+            elif len(numeros_sorteados) == 3:
+                card_3 = numero
+            elif len(numeros_sorteados) == 4:
+                card_4 = numero
+            else:
+                card_5 = numero
+
+    css = CardShowScreem(card_1, card_2, card_3, card_4, card_5)
+
+    css.casa1_positivo()
+    css.casa2_negativo()
+    css.casa3_caminho()
+    css.casa4_resultado()
+    css.casa5_consulente()
 
 
-while len(numeros_sorteados) < 5:
-    numero = random.randint(1, 78)
-    if numero not in numeros_sorteados:
-        numeros_sorteados.append(numero)
+COLOR_BUTTON = '#191A1A'
+COLOR_LETTER = '#00E9CA'
 
-        if len(numeros_sorteados) == 1:
-            card_1 = numero
-        elif len(numeros_sorteados) == 2:
-            card_2 = numero
-        elif len(numeros_sorteados) == 3:
-            card_3 = numero
-        elif len(numeros_sorteados) == 4:
-            card_4 = numero
-        else:
-            card_5 = numero
-
-
-css = CardShowScreem(card_1, card_2, card_3, card_4, card_5)
-css.casa1_positivo()
-css.casa2_negativo()
-css.casa3_caminho()
-css.casa4_resultado()
-css.casa5_consulente()
+botao = Button(window,
+                text="Start",
+                command=start_game,
+                fg=COLOR_LETTER,
+                bg=COLOR_BUTTON,).place(x=120, y=270)
         
-
 if __name__ == "__main__":
     window.mainloop()
