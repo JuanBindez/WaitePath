@@ -1,6 +1,6 @@
 # this is part of the WaitePath project.
 #
-# Release: v1.0-dev5
+# Release: v1.0-dev6
 #
 # Copyright (c) 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -75,39 +75,42 @@ def start_game():
     
     palavras_aleatorias = random.sample(palavras, 5)
 
+
     while len(set(palavras_aleatorias)) < 5:
         palavras_aleatorias = random.sample(palavras, 5)
 
     #print(palavras_aleatorias[1])
 
+
+    # casa 1
     window.update_idletasks()
     bg1 = PhotoImage(data=base64.b64decode(palavras_aleatorias[0]))
     label = Label(window, image=bg1)
-    label.place(x = 50,y = 200)
+    label.place(x = 100,y = 200)
         
-
+    #casa 2
     window.update_idletasks()
     bg2 = PhotoImage(data=base64.b64decode(palavras_aleatorias[1]))
     label = Label(window, image=bg2)
-    label.place(x = 300,y = 200)
+    label.place(x = 750,y = 200)
         
-
+    #casa 3 
     window.update_idletasks()
     bg3 = PhotoImage(data=base64.b64decode(palavras_aleatorias[2]))
     label = Label(window, image=bg3)
-    label.place(x = 100,y = 20)
+    label.place(x = 400,y = 10)
         
-
+    #casa 4
     window.update_idletasks()
     bg4 = PhotoImage(data=base64.b64decode(palavras_aleatorias[3]))
     label = Label(window, image=bg4)
-    label.place(x = 100,y = 600)
+    label.place(x = 400,y = 470)
         
-
+    #casa 5
     window.update_idletasks()
     bg5 = PhotoImage(data=base64.b64decode(palavras_aleatorias[4]))
     label = Label(window, image=bg5)
-    label.place(x = 60,y = 200)
+    label.place(x = 400,y = 230)
     window.mainloop()
 
 
@@ -119,7 +122,7 @@ botao = Button(window,
                 text="Start",
                 command=start_game,
                 fg=COLOR_LETTER,
-                bg=COLOR_BUTTON,).place(x=400, y=600)
+                bg=COLOR_BUTTON,).place(x=800, y=600)
         
 if __name__ == "__main__":
     window.mainloop()
