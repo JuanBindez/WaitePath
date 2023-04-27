@@ -1,6 +1,6 @@
 # this is part of the WaitePath project.
 #
-# Release: v1.0-dev6
+# Release: v1.0-dev7
 #
 # Copyright (c) 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -25,6 +25,7 @@ import os
 import base64
 import io
 import random
+import time
 
 from tkinter import *
 from tkinter import ttk
@@ -38,7 +39,7 @@ image_base64 = 'iVBORw0KGgoAAAANSUhEUgAABQMAAALQCAYAAAAkSmZVAAAABHNCSVQICAgIfAhk
 window = Tk()
 window.title("WaitePath")
 window.geometry("1200x650")
-window.resizable(True, True)# False for non-responsive window and True for responsive.
+window.resizable(False, True)# False for non-responsive window and True for responsive.
 window.attributes('-alpha',9.1)
 #window['background'] = '#373636'
 #foto_icon = PhotoImage(data=base64.b64decode(ICON_LOGO))
@@ -64,6 +65,7 @@ CARD8_10_DE_COPAS = 'iVBORw0KGgoAAAANSUhEUgAAAJYAAAD/CAYAAAAT+i9wAAAABHNCSVQICAg
 
 
 def start_game():
+    
     palavras = [CARD1_MAGICIAN, 
                 CARD2_2_DE_ESPADAS, 
                 CARD3_RAINHA_DE_OUROS, 
@@ -83,34 +85,39 @@ def start_game():
 
 
     # casa 1
+    time.sleep(0.1)
     window.update_idletasks()
     bg1 = PhotoImage(data=base64.b64decode(palavras_aleatorias[0]))
     label = Label(window, image=bg1)
     label.place(x = 100,y = 200)
         
     #casa 2
+    time.sleep(0.1)
     window.update_idletasks()
     bg2 = PhotoImage(data=base64.b64decode(palavras_aleatorias[1]))
     label = Label(window, image=bg2)
     label.place(x = 750,y = 200)
         
     #casa 3 
+    time.sleep(0.1)
     window.update_idletasks()
     bg3 = PhotoImage(data=base64.b64decode(palavras_aleatorias[2]))
     label = Label(window, image=bg3)
-    label.place(x = 400,y = 10)
+    label.place(x = 450,y = 10)
         
     #casa 4
+    time.sleep(0.1)
     window.update_idletasks()
     bg4 = PhotoImage(data=base64.b64decode(palavras_aleatorias[3]))
     label = Label(window, image=bg4)
-    label.place(x = 400,y = 470)
+    label.place(x = 370,y = 460)
         
     #casa 5
+    time.sleep(0.1)
     window.update_idletasks()
     bg5 = PhotoImage(data=base64.b64decode(palavras_aleatorias[4]))
     label = Label(window, image=bg5)
-    label.place(x = 400,y = 230)
+    label.place(x = 400,y = 240)
     window.mainloop()
 
 
