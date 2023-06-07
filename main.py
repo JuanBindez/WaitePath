@@ -34,7 +34,6 @@ from tkinter import filedialog
 
 from src.images import *
 
-
 """site to encode images in base64 https://base64.guru/converter/encode/image"""
 
 window = Tk()
@@ -46,15 +45,11 @@ window.attributes('-alpha',9.1)
 #foto_icon = PhotoImage(data=base64.b64decode(ICON_LOGO))
 #window.iconphoto(True, foto_icon)
 
-
 image_data = base64.b64decode(image_background_base64)
 img = PhotoImage(data=image_data)
 
-
 background_label = Label(window, image=img)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
-
-
 
 def start_game():
     
@@ -68,7 +63,6 @@ def start_game():
                 CARD8_10_DE_COPAS,]
     
     palavras_aleatorias = random.sample(palavras, 5)
-
 
     while len(set(palavras_aleatorias)) < 5:
         palavras_aleatorias = random.sample(palavras, 5)
@@ -110,7 +104,6 @@ def start_game():
     label = Label(window, image=bg5)
     label.place(x = 400,y = 240)
     window.mainloop()
-
 
 COLOR_BUTTON = '#191A1A'
 COLOR_LETTER = '#00E9CA'
