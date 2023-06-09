@@ -66,7 +66,6 @@ def start_game():
 
     while len(set(palavras_aleatorias)) < 5:
         palavras_aleatorias = random.sample(palavras, 5)
-
     #print(palavras_aleatorias[1])
 
     # casa 1
